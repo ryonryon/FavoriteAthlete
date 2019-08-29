@@ -10,6 +10,7 @@ import UIKit
 class AthleteFormViewController: UIViewController {
     
     var athlete: Athlete?
+    var athleteIndex: Int?;
 
     @IBOutlet weak var nameTextBox: UITextField!
     @IBOutlet weak var ageTextBox: UITextField!
@@ -33,8 +34,17 @@ class AthleteFormViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func tappedSaveButton(_ sender: UIButton) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let prevVC = segue.destination as! AthleteTableViewController
         
+        if (athleteIndex == nil) {
+            prevVC.athletes.append(Athlete(name: nameTextBox.text!, age: Int(ageTextBox.text!)!, league: leagueTextBox.text!, team: teamTextBox.text!))
+        } else {
+            prevVC.athletes[athleteIndex!].name = nameTextBox.text!
+            prevVC.athletes[athleteIndex!].age = Int(ageTextBox.text!)!
+            prevVC.athletes[athleteIndex!].league = leagueTextBox.text!
+            prevVC.athletes[athleteIndex!].team = teamTextBox.text!
+        }
     }
     
 }

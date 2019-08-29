@@ -128,7 +128,7 @@
                                 <rect key="frame" x="190" y="369" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="tappedSaveButton:" destination="8K9-2q-IXD" eventType="touchUpInside" id="TLU-M7-v6K"/>
+                                    <segue destination="wFc-3q-vwq" kind="unwind" unwindAction="unwindToTableView:" id="0p6-3t-6Ut"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,7 +150,6 @@
                         <outlet property="leagueTextBox" destination="Aap-hH-FNd" id="WTN-Zy-HJO"/>
                         <outlet property="nameTextBox" destination="U3J-R0-1jS" id="pTF-hk-zX7"/>
                         <outlet property="teamTextBox" destination="rKE-v9-NBr" id="Elc-o7-gYf"/>
-                        <segue destination="wFc-3q-vwq" kind="unwind" identifier="UnwindToAthleteTable" unwindAction="prepareForUnwindWithSegue:" id="HPS-Df-mzT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrL-ji-oiy" sceneMemberID="firstResponder"/>
@@ -160,6 +159,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jne-Px-TqC"/>
+        <segue reference="zao-5I-OB3"/>
     </inferredMetricsTieBreakers>
 </document>

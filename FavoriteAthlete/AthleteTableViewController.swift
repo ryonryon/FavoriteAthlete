@@ -35,16 +35,18 @@ class AthleteTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddAthlete" {
-            
-        } else if segue.identifier == "EditAthlete" {
-            let destVC = segue.destination as! AthleteFormViewController
-            if let selectIndexPath = tableView.indexPathForSelectedRow {
+        let destVC = segue.destination as! AthleteFormViewController
+        if let selectIndexPath = tableView.indexPathForSelectedRow {
+            if segue.identifier == "AddAthlete" {
+                
+            } else if segue.identifier == "EditAthlete" {
+                destVC.athleteIndex = selectIndexPath.row
                 destVC.athlete = athletes[selectIndexPath.row]
             }
         }
-        
     }
+    
+    @IBAction func unwindToTableView(_ sender: UIStoryboardSegue){}
 
 
     /*
